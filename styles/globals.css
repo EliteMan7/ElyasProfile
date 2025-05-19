@@ -1,0 +1,775 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-text font-sans;
+  }
+  
+  ::selection {
+    @apply bg-primary/20 text-primary;
+  }
+  
+  /* RTL Support */
+  .rtl {
+    direction: rtl;
+    font-family: 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  .rtl * {
+    letter-spacing: normal !important;
+  }
+  
+  html[lang="ar"] .arabic-name {
+    font-family: 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+    direction: rtl;
+    display: inline-block;
+    text-align: right;
+    unicode-bidi: bidi-override;
+    width: auto;
+    min-width: fit-content;
+  }
+  
+  .rtl .nav-link::after {
+    left: auto;
+    right: 0;
+  }
+  
+  .rtl .section-heading::after {
+    left: auto;
+    right: 0;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply relative hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full;
+  }
+  
+  .card {
+    @apply bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg p-6 transition-all duration-300 hover:shadow-xl border border-white/20;
+  }
+  
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-md rounded-2xl shadow-lg border border-white/20 transition-all duration-300 hover:shadow-xl;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-3 rounded-full font-medium hover:bg-opacity-90 transition-all duration-300 hover:translate-y-[-2px] active:translate-y-[1px];
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-text px-6 py-3 rounded-full font-medium hover:bg-opacity-90 transition-all duration-300 hover:translate-y-[-2px] active:translate-y-[1px];
+  }
+  
+  .btn-outline {
+    @apply inline-flex items-center px-6 py-3 border border-text/30 rounded-full font-medium transition-all duration-300 hover:bg-text hover:text-background focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary hover:translate-y-[-2px] active:translate-y-[1px];
+  }
+  
+  .section-heading {
+    @apply text-3xl sm:text-4xl font-bold mb-4 relative inline-block;
+  }
+  
+  .section-heading::after {
+    @apply content-[''] absolute bottom-0 left-0 w-1/2 h-1 bg-gradient-to-r from-primary to-secondary rounded-full;
+  }
+}
+
+/* Custom cursor styles */
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: transform 0.2s ease, width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
+}
+
+/* Magical background gradient */
+.magical-bg {
+  background: linear-gradient(45deg, rgba(93, 95, 239, 0.05), rgba(244, 202, 64, 0.05), rgba(255, 122, 80, 0.05));
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Scroll animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Text reveal animation */
+.reveal-text {
+  animation: reveal 1s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+@keyframes reveal {
+  0% {
+    transform: translate(0, 100%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* Smooth transitions for all elements */
+* {
+  @apply transition-colors duration-200;
+}
+
+/* Glass morphism utility classes */
+.glassmorphism {
+  @apply bg-white/10 backdrop-blur-md border border-white/20 shadow-lg;
+}
+
+.glassmorphism-dark {
+  @apply bg-text/10 backdrop-blur-md border border-text/10 shadow-lg;
+}
+
+/* Gradient text utility */
+.gradient-text {
+  @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+}
+
+/* Grid background */
+.grid-bg {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(15, 23, 42, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.05) 1px, transparent 1px);
+}
+
+/* RTL specific layout adjustments */
+.rtl .flex-row {
+  flex-direction: row-reverse;
+}
+
+/* Exempt language toggle from RTL reversing - keep the toggle in the original left-to-right flow */
+.rtl .language-toggle,
+.rtl .inline-flex {
+  flex-direction: row !important;
+  direction: ltr !important;
+}
+
+.rtl .nav-link {
+  margin-left: 2rem !important;
+  margin-right: 0 !important;
+}
+
+.rtl .space-x-8 > * + * {
+  margin-left: 0;
+  margin-right: 2rem;
+}
+
+.rtl .ml-8 {
+  margin-left: 0;
+  margin-right: 2rem;
+}
+
+.rtl .mr-8 {
+  margin-right: 0;
+  margin-left: 2rem;
+}
+
+.rtl .text-left {
+  text-align: right;
+}
+
+.rtl .items-end {
+  align-items: flex-start;
+}
+
+.rtl .justify-end {
+  justify-content: flex-start;
+}
+
+/* Prevent any SVG flipping in RTL mode */
+.rtl svg {
+  transform: none !important;
+}
+
+/* Preserve original orientation for toggle button icons */
+.rtl .language-toggle svg,
+.rtl button svg {
+  transform: none;
+}
+
+/* Fix for logo alignment in RTL mode */
+.rtl .arabic-name {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+/* RTL name with period at the beginning */
+.rtl-name {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.rtl .gradient-text {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+/* Fix for name and dot in RTL mode */
+.rtl .gradient-text .text-primary {
+  margin-right: 0;
+  margin-left: 1px;
+}
+
+/* Project navigation arrows for RTL */
+.rtl .project-nav-arrow {
+  transform: scaleX(-1);
+}
+
+/* Additional RTL layout fixes for project carousel */
+.rtl .card .flex-row-reverse {
+  flex-direction: row !important; /* Override to correct the double reversal */
+}
+
+/* Fix for RTL project indicators */
+.rtl .space-x-reverse {
+  margin-left: 0.5rem;
+  margin-right: 0;
+}
+
+/* Fix for mobile menu in RTL mode */
+.rtl .mobile-menu {
+  text-align: right;
+}
+
+/* General RTL adjustments for spacing */
+.rtl .px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.rtl .px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Fix spacing between social media icons in RTL mode */
+.rtl .space-x-4 > * + * {
+  margin-left: 0;
+  margin-right: 1rem;
+}
+
+/* Fix for mobile menu in RTL mode */
+.rtl .mobile-menu {
+  text-align: right;
+}
+
+/* Fortune Cookie Styles */
+.paper-bg {
+  background-color: rgba(255, 252, 242, 0.9);
+  background-image: 
+    linear-gradient(rgba(227, 220, 200, 0.05) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(227, 220, 200, 0.05) 2px, transparent 2px),
+    linear-gradient(rgba(227, 220, 200, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(227, 220, 200, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05);
+  border: 1px dashed rgba(185, 160, 120, 0.2);
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-blink {
+  animation: blink 0.8s infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+.sparkle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: white;
+  filter: blur(1px);
+  z-index: 2;
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+.fortune-gradient {
+  background: linear-gradient(135deg, #fef3c7 0%, #fffbeb 100%);
+}
+
+/* Add cool scrolling paper texture animation */
+@keyframes paperScroll {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 0% 100%; }
+}
+
+.paper-scroll {
+  animation: paperScroll 30s linear infinite alternate;
+}
+
+/* Fun particle animation for cookie crumbs */
+@keyframes crumble {
+  0% { transform: translate(0, 0) rotate(0); opacity: 1; }
+  100% { transform: translate(var(--tx), var(--ty)) rotate(var(--r)); opacity: 0; }
+}
+
+.cookie-crumb {
+  --tx: 0px;
+  --ty: 0px;
+  --r: 0deg;
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background-color: #b45309;
+  border-radius: 50%;
+  animation: crumble 0.8s forwards;
+}
+
+/* Glowing effect */
+.fortune-glow {
+  box-shadow: 0 0 15px rgba(251, 191, 36, 0.3), 
+             0 0 30px rgba(251, 191, 36, 0.1), 
+             inset 0 0 10px rgba(251, 191, 36, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+
+.fortune-glow:hover {
+  box-shadow: 0 0 25px rgba(251, 191, 36, 0.5), 
+             0 0 50px rgba(251, 191, 36, 0.2), 
+             inset 0 0 20px rgba(251, 191, 36, 0.3);
+}
+
+/* Pulsing animation */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+/* Fortune cookie shake animation */
+@keyframes shake {
+  0%, 100% { transform: rotate(0); }
+  10%, 30%, 50%, 70%, 90% { transform: rotate(-2deg); }
+  20%, 40%, 60%, 80% { transform: rotate(2deg); }
+}
+
+.shake-cookie {
+  animation: shake 0.5s ease-in-out;
+}
+
+/* Add fun confetti burst */
+@keyframes confettiFall {
+  0% { transform: translateY(0) rotate(0); opacity: 1; }
+  100% { transform: translateY(300px) rotate(720deg); opacity: 0; }
+}
+
+.confetti {
+  position: absolute;
+  animation: confettiFall 1.5s forwards;
+}
+
+/* Enhanced bouncing effect */
+@keyframes bounceEnhanced {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-30px); }
+  60% { transform: translateY(-15px); }
+}
+
+.bounce-enhanced {
+  animation: bounceEnhanced 1s ease;
+}
+
+/* Cool paper tearing effect */
+@keyframes tearPaper {
+  0% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+  100% { clip-path: polygon(0 0, 100% 0, 98% 100%, 2% 100%, 0 90%); }
+}
+
+.paper-tear {
+  animation: tearPaper 0.3s forwards;
+}
+
+/* Cookie opening effect - two halves splitting */
+.cookie-half {
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.cookie-half.top {
+  transform-origin: bottom center;
+}
+
+.cookie-half.bottom {
+  transform-origin: top center;
+}
+
+.cookie-open .cookie-half.top {
+  transform: translateY(-20px) rotateX(60deg);
+}
+
+.cookie-open .cookie-half.bottom {
+  transform: translateY(20px) rotateX(-60deg);
+}
+
+/* 3D Perspective */
+.perspective {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.translate-z-1 {
+  transform: translateZ(-1px);
+}
+
+.translate-z-0\.5 {
+  transform: translateZ(-0.5px);
+}
+
+/* Enhanced cookie styling */
+.fortune-glow {
+  box-shadow: 0 0 15px rgba(251, 191, 36, 0.4), 
+             0 0 30px rgba(251, 191, 36, 0.2), 
+             inset 0 0 10px rgba(251, 191, 36, 0.3);
+  transition: box-shadow 0.3s ease;
+  background: radial-gradient(
+    circle at 70% 30%,
+    rgba(253, 230, 138, 0.9) 0%,
+    rgba(252, 211, 77, 0.8) 30%,
+    rgba(251, 191, 36, 0.7) 70%,
+    rgba(217, 119, 6, 0.9) 100%
+  );
+}
+
+.fortune-glow:hover {
+  box-shadow: 0 0 25px rgba(251, 191, 36, 0.5), 
+             0 0 50px rgba(251, 191, 36, 0.2), 
+             inset 0 0 20px rgba(251, 191, 36, 0.3);
+}
+
+/* Enhanced cookie crumbs */
+.cookie-crumb {
+  filter: drop-shadow(0 0 1px rgba(146, 64, 14, 0.3));
+}
+
+/* Enhanced paper styles */
+.paper-bg {
+  background-color: rgba(255, 250, 240, 0.9);
+  background-image: 
+    linear-gradient(rgba(227, 220, 200, 0.07) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(227, 220, 200, 0.07) 2px, transparent 2px),
+    linear-gradient(rgba(227, 220, 200, 0.13) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(227, 220, 200, 0.13) 1px, transparent 1px);
+  background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+  box-shadow: 
+    inset 0 0 20px rgba(0, 0, 0, 0.05),
+    0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px dashed rgba(185, 160, 120, 0.3);
+}
+
+/* Improved paper tear effect */
+@keyframes tearPaper {
+  0% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+  100% { 
+    clip-path: polygon(
+      0 0, 
+      100% 0, 
+      99% 20%, 
+      97% 40%, 
+      100% 60%, 
+      98% 80%, 
+      100% 100%, 
+      0 100%, 
+      2% 80%, 
+      0 60%, 
+      3% 40%, 
+      1% 20%
+    ); 
+  }
+}
+
+.paper-tear {
+  animation: tearPaper 0.5s forwards;
+}
+
+/* More dramatic cookie opening effect */
+.cookie-open .cookie-half.top {
+  transform: translateY(-30px) rotateX(70deg) translateZ(10px);
+  filter: drop-shadow(0 -10px 10px rgba(0, 0, 0, 0.1));
+}
+
+.cookie-open .cookie-half.bottom {
+  transform: translateY(30px) rotateX(-70deg) translateZ(10px);
+  filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.1));
+}
+
+/* More dramatic shaking */
+@keyframes shake {
+  0%, 100% { transform: rotate(0) translateX(0); }
+  10% { transform: rotate(-3deg) translateX(-2px); }
+  20% { transform: rotate(3deg) translateX(2px); }
+  30% { transform: rotate(-3deg) translateX(-2px); }
+  40% { transform: rotate(3deg) translateX(2px); }
+  50% { transform: rotate(-3deg) translateX(-2px); }
+  60% { transform: rotate(3deg) translateX(2px); }
+  70% { transform: rotate(-3deg) translateX(-2px); }
+  80% { transform: rotate(3deg) translateX(2px); }
+  90% { transform: rotate(-3deg) translateX(-2px); }
+}
+
+.shake-cookie {
+  animation: shake 0.6s ease-in-out;
+}
+
+/* Enhanced sparkle effect */
+@keyframes sparkle {
+  0% { opacity: 0.2; transform: scale(1) translateZ(0); }
+  50% { opacity: 1; transform: scale(1.5) translateZ(2px); }
+  100% { opacity: 0.2; transform: scale(1) translateZ(0); }
+}
+
+.sparkle {
+  background: radial-gradient(
+    circle at center,
+    white 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    transparent 100%
+  );
+  filter: blur(0.5px);
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+/* Enhanced floating animation */
+@keyframes float {
+  0% { transform: translateY(0) rotate(0); }
+  25% { transform: translateY(-7px) rotate(1deg); }
+  50% { transform: translateY(-10px) rotate(0); }
+  75% { transform: translateY(-7px) rotate(-1deg); }
+  100% { transform: translateY(0) rotate(0); }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+/* Add soft rainbow effect for the paper */
+.rainbow-edge {
+  position: relative;
+}
+
+.rainbow-edge::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  background: linear-gradient(
+    45deg, 
+    rgba(252, 211, 77, 0.5) 0%, 
+    rgba(251, 146, 60, 0.5) 20%, 
+    rgba(249, 115, 22, 0.5) 40%, 
+    rgba(253, 224, 71, 0.5) 60%, 
+    rgba(250, 204, 21, 0.5) 80%, 
+    rgba(252, 211, 77, 0.5) 100%
+  );
+  filter: blur(2px);
+  border-radius: inherit;
+  opacity: 0.6;
+}
+
+/* Add spinning fortune animation for button hover */
+@keyframes spinFortune {
+  0% { transform: rotate(0) scale(1); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+.spin-fortune {
+  animation: spinFortune 0.8s ease-out;
+}
+
+/* Enhanced confetti */
+.confetti {
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.7));
+}
+
+/* Mystical Fortune Styles */
+.mystical-fortune {
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.4), 
+             0 0 40px rgba(251, 191, 36, 0.2), 
+             inset 0 0 15px rgba(251, 191, 36, 0.3);
+  transition: box-shadow 0.3s ease;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(254, 243, 199, 0.9) 0%,
+    rgba(252, 211, 77, 0.8) 50%,
+    rgba(245, 158, 11, 0.7) 80%,
+    rgba(217, 119, 6, 0.8) 100%
+  );
+  transform-style: preserve-3d;
+}
+
+.mystical-fortune:hover {
+  box-shadow: 0 0 30px rgba(251, 191, 36, 0.5), 
+             0 0 60px rgba(251, 191, 36, 0.3), 
+             inset 0 0 25px rgba(251, 191, 36, 0.4);
+}
+
+/* Fortune opening effect - portals splitting */
+.portal {
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.portal.top {
+  transform-origin: bottom center;
+}
+
+.portal.bottom {
+  transform-origin: top center;
+}
+
+.fortune-open .portal.top {
+  transform: translateY(-30px) rotateX(70deg) translateZ(10px);
+  filter: drop-shadow(0 -10px 15px rgba(0, 0, 0, 0.15));
+}
+
+.fortune-open .portal.bottom {
+  transform: translateY(30px) rotateX(-70deg) translateZ(10px);
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.15));
+}
+
+/* Enhanced floating animation */
+@keyframes float {
+  0% { transform: translateY(0) rotateY(0); }
+  25% { transform: translateY(-7px) rotateY(3deg); }
+  50% { transform: translateY(-12px) rotateY(0); }
+  75% { transform: translateY(-7px) rotateY(-3deg); }
+  100% { transform: translateY(0) rotateY(0); }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+/* Mystical energy pulse */
+@keyframes energyPulse {
+  0% { opacity: 0.3; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.05); }
+  100% { opacity: 0.3; transform: scale(0.9); }
+}
+
+.energy-pulse {
+  animation: energyPulse 3s ease-in-out infinite;
+}
+
+/* Improved mystical ribbon effect */
+@keyframes ribbonGlow {
+  0% { opacity: 0.3; background-position: 0% 50%; }
+  50% { opacity: 0.7; background-position: 100% 50%; }
+  100% { opacity: 0.3; background-position: 0% 50%; }
+}
+
+.mystical-ribbon {
+  background: linear-gradient(90deg, 
+    rgba(254, 243, 199, 0.1), 
+    rgba(251, 191, 36, 0.4),
+    rgba(254, 243, 199, 0.1)
+  );
+  background-size: 200% 100%;
+  animation: ribbonGlow 3s ease-in-out infinite;
+}
+
+/* Elegant rune rotation */
+@keyframes runeRotate {
+  from { transform: rotate(0deg) translateY(-30px); }
+  to { transform: rotate(360deg) translateY(-30px); }
+}
+
+.rune-rotation {
+  animation: runeRotate 20s linear infinite;
+}
+
+/* Orbital animation for decorative elements */
+@keyframes orbit {
+  0% { transform: rotate(0deg) translateX(50px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(50px) rotate(-360deg); }
+}
+
+.orbit {
+  animation: orbit 15s linear infinite;
+} 
