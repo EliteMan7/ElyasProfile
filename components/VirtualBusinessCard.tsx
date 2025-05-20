@@ -135,13 +135,13 @@ const VirtualBusinessCard: React.FC<VirtualBusinessCardProps> = ({ setCursorVari
                 handleFlip();
               }}
               onTap={handleTap}
-              className="relative w-full max-w-[350px] h-[200px] cursor-pointer"
+              className="relative w-full max-w-[350px] md:max-w-[400px] lg:max-w-[450px] h-[200px] md:h-[230px] lg:h-[260px] cursor-pointer"
               style={{ transformStyle: "preserve-3d" }}
               onMouseEnter={() => setCursorVariant('button')}
             >
               {/* Front of card */}
               <div 
-                className={`absolute w-full h-full rounded-xl p-6 flex flex-col justify-between
+                className={`absolute w-full h-full rounded-xl p-6 md:p-7 lg:p-8 flex flex-col justify-between
                            ${isFlipped ? 'backface-hidden' : 'z-10'}`}
                 style={{
                   background: "linear-gradient(135deg, #2c3e50 0%, #1a2530 100%)",
@@ -194,11 +194,11 @@ const VirtualBusinessCard: React.FC<VirtualBusinessCardProps> = ({ setCursorVari
                 {/* Embossed logo area */}
                 <div className="relative flex items-start justify-between z-10">
                   <div>
-                    <h3 className="text-xl font-bold text-white">Elyas Ahmed</h3>
-                    <p className="text-gray-300 text-sm">Product Manager</p>
+                    <h3 className="text-xl md:text-2xl font-bold text-white">Elyas Ahmed</h3>
+                    <p className="text-gray-300 text-sm md:text-base">Product Manager</p>
                   </div>
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary/50 to-primary flex items-center justify-center">
-                    <span className="text-white font-bold text-xl relative" 
+                  <div className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full bg-gradient-to-br from-primary/50 to-primary flex items-center justify-center">
+                    <span className="text-white font-bold text-xl md:text-2xl relative" 
                           style={{ 
                             textShadow: "0 1px 2px rgba(0,0,0,0.3)",
                           }}>
@@ -208,37 +208,37 @@ const VirtualBusinessCard: React.FC<VirtualBusinessCardProps> = ({ setCursorVari
                 </div>
                 
                 {/* Contact details with subtle glass effect */}
-                <div className="space-y-2 relative z-10 mb-6">
+                <div className="space-y-2 md:space-y-3 relative z-10 mb-6">
                   <div className="flex items-center space-x-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-5 md:w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
-                    <span className="text-sm text-gray-200">elyasesaahmed@gmail.com</span>
+                    <span className="text-sm md:text-base text-gray-200">elyasesaahmed@gmail.com</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-5 md:w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                    <span className="text-sm text-gray-200">elyas-ahmed.com</span>
+                    <span className="text-sm md:text-base text-gray-200">elyas-ahmed.com</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-5 md:w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
-                    <span className="text-sm text-gray-200">Berkeley, California</span>
+                    <span className="text-sm md:text-base text-gray-200">Berkeley, California</span>
                   </div>
                 </div>
                 
                 {/* Tap to flip text - positioned the same on both sides */}
-                <div className="absolute bottom-3 right-6 text-xs text-gray-400 opacity-70">
+                <div className="absolute bottom-3 right-6 text-xs md:text-sm text-gray-400 opacity-70">
                   {t('contact.vcard.tap_to_flip')}
                 </div>
               </div>
               
               {/* Back of card */}
               <div 
-                className={`absolute w-full h-full rounded-xl p-6 flex flex-col
+                className={`absolute w-full h-full rounded-xl p-6 md:p-7 lg:p-8 flex flex-col
                            ${isFlipped ? 'z-10' : 'backface-hidden'}`}
                 style={{
                   background: "linear-gradient(135deg, #2c3e50 0%, #1a2530 100%)",
@@ -297,42 +297,27 @@ const VirtualBusinessCard: React.FC<VirtualBusinessCardProps> = ({ setCursorVari
                     </h3>
                   </div>
                   
-                  {/* 2. QR Code section - flex-grow to take available space */}
+                  {/* 2. QR Code section with integrated download button */}
                   <div className="flex-grow flex items-center justify-center">
-                    {/* Glowing QR code frame */}
                     <div className="relative">
+                      {/* Glowing frame */}
                       <div className="absolute -inset-1.5 bg-gradient-to-br from-primary/30 to-blue-500/20 rounded-lg blur-md"></div>
+                      
+                      {/* QR code */}
                       <div className="bg-white p-2 rounded-lg shadow-inner relative">
                         <img
                           src={qrCodeUrl}
                           alt="QR Code for Elyas Ahmed's contact information"
                           width={100}
                           height={100}
-                          className="rounded"
+                          className="rounded w-[100px] md:w-[120px] lg:w-[130px] h-auto"
                         />
                       </div>
                     </div>
                   </div>
                   
-                  {/* Download button - hide on mobile, only show the one outside the card */}
-                  <div className="mt-auto mb-6 hidden md:flex items-center justify-center">
-                    <a
-                      href="/vcard/elyas_ahmed.vcf"
-                      download="Elyas_Ahmed.vcf"
-                      className="inline-flex items-center space-x-1 text-sm font-medium text-primary hover:text-primary-dark transition-colors"
-                      onClick={(e) => e.stopPropagation()}
-                      onMouseEnter={() => setCursorVariant('button')}
-                      onMouseLeave={() => setCursorVariant('default')}
-                    >
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                      </svg>
-                      <span>{t('contact.vcard.download')}</span>
-                    </a>
-                  </div>
-                  
                   {/* Tap to flip text - positioned the same on both sides */}
-                  <div className="absolute bottom-3 right-6 text-xs text-gray-400 opacity-70">
+                  <div className="absolute bottom-3 right-6 text-xs md:text-sm text-gray-400 opacity-70">
                     {t('contact.vcard.tap_to_flip')}
                   </div>
                 </div>
@@ -348,7 +333,7 @@ const VirtualBusinessCard: React.FC<VirtualBusinessCardProps> = ({ setCursorVari
                 onMouseEnter={() => setCursorVariant('button')}
                 onMouseLeave={() => setCursorVariant('default')}
               >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                 </svg>
                 <span>{t('contact.vcard.download')}</span>
