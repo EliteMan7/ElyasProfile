@@ -208,7 +208,7 @@ const VirtualBusinessCard: React.FC<VirtualBusinessCardProps> = ({ setCursorVari
                 </div>
                 
                 {/* Contact details with subtle glass effect */}
-                <div className="space-y-2 relative z-10">
+                <div className="space-y-2 relative z-10 mb-6">
                   <div className="flex items-center space-x-2">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -230,14 +230,9 @@ const VirtualBusinessCard: React.FC<VirtualBusinessCardProps> = ({ setCursorVari
                   </div>
                 </div>
                 
-                {/* Footer area */}
-                <div className="mt-auto relative">
-                  {/* Embossed decorative line */}
-                  <div className="h-px w-full bg-gradient-to-r from-transparent via-primary/30 to-transparent mb-2"></div>
-                  
-                  <div className="absolute bottom-0 right-3 text-xs text-gray-400 opacity-70">
-                    {t('contact.vcard.tap_to_flip')}
-                  </div>
+                {/* Tap to flip text - positioned the same on both sides */}
+                <div className="absolute bottom-3 right-6 text-xs text-gray-400 opacity-70">
+                  {t('contact.vcard.tap_to_flip')}
                 </div>
               </div>
               
@@ -303,7 +298,7 @@ const VirtualBusinessCard: React.FC<VirtualBusinessCardProps> = ({ setCursorVari
                   </div>
                   
                   {/* 2. QR Code section - flex-grow to take available space */}
-                  <div className="flex-grow flex items-center justify-center mb-4">
+                  <div className="flex-grow flex items-center justify-center">
                     {/* Glowing QR code frame */}
                     <div className="relative">
                       <div className="absolute -inset-1.5 bg-gradient-to-br from-primary/30 to-blue-500/20 rounded-lg blur-md"></div>
@@ -319,32 +314,26 @@ const VirtualBusinessCard: React.FC<VirtualBusinessCardProps> = ({ setCursorVari
                     </div>
                   </div>
                   
-                  {/* 3. Footer section */}
-                  <div className="mt-auto">
-                    {/* Embossed decorative line */}
-                    <div className="h-px w-full bg-gradient-to-r from-transparent via-primary/30 to-transparent mb-3"></div>
-                    
-                    {/* Download button - hide on mobile, only show the one outside the card */}
-                    <div className="flex justify-center mb-2 hidden md:flex">
-                      <a
-                        href="/vcard/elyas_ahmed.vcf"
-                        download="Elyas_Ahmed.vcf"
-                        className="inline-flex items-center space-x-1 text-sm font-medium text-primary hover:text-primary-dark transition-colors"
-                        onClick={(e) => e.stopPropagation()}
-                        onMouseEnter={() => setCursorVariant('button')}
-                        onMouseLeave={() => setCursorVariant('default')}
-                      >
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                        </svg>
-                        <span>{t('contact.vcard.download')}</span>
-                      </a>
-                    </div>
-                    
-                    {/* Tap to flip text in same position as front */}
-                    <div className="absolute bottom-0 right-3 text-xs text-gray-400 opacity-70">
-                      {t('contact.vcard.tap_to_flip')}
-                    </div>
+                  {/* Download button - hide on mobile, only show the one outside the card */}
+                  <div className="mt-auto mb-6 hidden md:flex items-center justify-center">
+                    <a
+                      href="/vcard/elyas_ahmed.vcf"
+                      download="Elyas_Ahmed.vcf"
+                      className="inline-flex items-center space-x-1 text-sm font-medium text-primary hover:text-primary-dark transition-colors"
+                      onClick={(e) => e.stopPropagation()}
+                      onMouseEnter={() => setCursorVariant('button')}
+                      onMouseLeave={() => setCursorVariant('default')}
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                      </svg>
+                      <span>{t('contact.vcard.download')}</span>
+                    </a>
+                  </div>
+                  
+                  {/* Tap to flip text - positioned the same on both sides */}
+                  <div className="absolute bottom-3 right-6 text-xs text-gray-400 opacity-70">
+                    {t('contact.vcard.tap_to_flip')}
                   </div>
                 </div>
               </div>
