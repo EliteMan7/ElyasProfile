@@ -2,8 +2,13 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  trailingSlash: false,
+  trailingSlash: true,
   output: 'export',
+  basePath: '/ElyasProfile',
+  assetPrefix: '/ElyasProfile/',
+  images: {
+    unoptimized: true,
+  },
   // Enable debugging
   webpack: (config, { isServer }) => {
     if (!isServer) {
@@ -18,4 +23,4 @@ const nextConfig = {
   },
 }
 
-module.exports = nextConfig 
+module.exports = nextConfig
