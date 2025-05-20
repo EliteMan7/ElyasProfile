@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
+import VirtualBusinessCard from './VirtualBusinessCard';
 
 interface ContactProps {
   setCursorVariant: (variant: string) => void;
@@ -164,6 +165,9 @@ const Contact: React.FC<ContactProps> = ({ setCursorVariant }) => {
                 </div>
               </div>
             </div>
+
+            {/* Add the Virtual Business Card component */}
+            <VirtualBusinessCard setCursorVariant={setCursorVariant} />
           </motion.div>
 
           <motion.div

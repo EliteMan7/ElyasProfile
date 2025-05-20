@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Elyas Ahmed
+N:Ahmed;Elyas;;;
+TITLE:Product Manager
+EMAIL;TYPE=INTERNET,WORK:elyasesaahmed@gmail.com
+URL;TYPE=WORK:https://elyas-ahmed.com
+URL;TYPE=LinkedIn:https://linkedin.com/in/-elyasahmed
+URL;TYPE=GitHub:https://github.com/EliteMan7
+ADR;TYPE=WORK:;;Berkeley;California;94720;United States
+NOTE:Product Manager with a technical background, passionate about building products that solve real-world problems.
+END:VCARD 

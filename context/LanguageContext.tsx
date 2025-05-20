@@ -132,19 +132,24 @@ const translations: Record<Language, Record<string, string>> = {
     
     // Contact
     'contact.title': 'Get In Touch',
-    'contact.subtitle': 'I love hearing from fellow builders, researchers, and product thinkers. Let\'s collaborate, chat ideas, or build something meaningful together.',
+    'contact.subtitle': 'Feel free to reach out if you\'re looking for a product manager, have a question, or just want to connect.',
     'contact.connect': 'Let\'s Connect',
-    'contact.location': 'Based in San Francisco, I\'m always open to discussing new projects, creative ideas or opportunities to be part of your vision.',
+    'contact.location': 'Currently based in Berkeley, California. Open to remote and hybrid opportunities worldwide.',
     'contact.email': 'Email',
     'contact.location.label': 'Location',
-    'contact.location.value': 'San Francisco, USA',
+    'contact.location.value': 'Berkeley, California',
     'contact.social': 'Social Media',
     'contact.form.name': 'Your Name',
     'contact.form.email': 'Your Email',
     'contact.form.message': 'Your Message',
     'contact.form.submit': 'Send Message',
-    'contact.form.success': 'Your message has been sent successfully!',
-    'contact.form.error': 'There was a problem sending your message. Please try again or email me directly.',
+    'contact.form.success': 'Your message has been sent successfully. I\'ll get back to you soon!',
+    'contact.form.error': 'There was an error sending your message. Please try again or contact me directly via email.',
+    
+    // Virtual Business Card
+    'contact.vcard.toggle': 'Virtual Business Card',
+    'contact.vcard.download': 'Add to Contacts',
+    'contact.vcard.instruction': 'Scan the QR code or click the button to add me to your contacts',
     
     // Footer
     'footer.rights': 'All rights reserved.',
@@ -301,19 +306,24 @@ const translations: Record<Language, Record<string, string>> = {
     
     // Contact
     'contact.title': 'تواصل معي',
-    'contact.subtitle': 'أحب التواصل مع زملائي المطورين والباحثين ومفكري المنتجات. لنتعاون، ونناقش الأفكار، أو نبني شيئًا مهمًا معًا.',
+    'contact.subtitle': 'لا تتردد في التواصل إذا كنت تبحث عن مدير منتج، لديك سؤال، أو ترغب فقط في التواصل.',
     'contact.connect': 'لنتواصل',
-    'contact.location': 'أعيش في سان فرانسيسكو، وأنا دائمًا منفتح لمناقشة مشاريع جديدة، وأفكار إبداعية، أو فرص لأكون جزءًا من رؤيتك.',
+    'contact.location': 'أقيم حاليًا في بيركلي، كاليفورنيا. منفتح على فرص العمل عن بعد والهجين في جميع أنحاء العالم.',
     'contact.email': 'البريد الإلكتروني',
     'contact.location.label': 'الموقع',
-    'contact.location.value': 'سان فرانسيسكو، الولايات المتحدة',
-    'contact.social': 'التواصل الاجتماعي',
+    'contact.location.value': 'بيركلي، كاليفورنيا',
+    'contact.social': 'وسائل التواصل الاجتماعي',
     'contact.form.name': 'اسمك',
     'contact.form.email': 'بريدك الإلكتروني',
     'contact.form.message': 'رسالتك',
     'contact.form.submit': 'إرسال الرسالة',
-    'contact.form.success': 'تم إرسال رسالتك بنجاح!',
-    'contact.form.error': 'حدثت مشكلة في إرسال رسالتك. يرجى المحاولة مرة أخرى أو مراسلتي مباشرة عبر البريد الإلكتروني.',
+    'contact.form.success': 'تم إرسال رسالتك بنجاح. سأرد عليك قريبًا!',
+    'contact.form.error': 'حدث خطأ أثناء إرسال رسالتك. يرجى المحاولة مرة أخرى أو الاتصال بي مباشرة عبر البريد الإلكتروني.',
+    
+    // Virtual Business Card
+    'contact.vcard.toggle': 'بطاقة عمل افتراضية',
+    'contact.vcard.download': 'إضافة إلى جهات الاتصال',
+    'contact.vcard.instruction': 'امسح رمز QR أو انقر على الزر لإضافتي إلى جهات الاتصال الخاصة بك',
     
     // Footer
     'footer.rights': 'جميع الحقوق محفوظة.',
