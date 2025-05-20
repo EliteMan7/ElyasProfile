@@ -4,8 +4,6 @@ const nextConfig = {
   swcMinify: true,
   trailingSlash: true,
   output: 'export',
-  basePath: '/ElyasProfile',
-  assetPrefix: '/ElyasProfile/',
   images: {
     unoptimized: true,
   },
