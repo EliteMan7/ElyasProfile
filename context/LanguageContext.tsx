@@ -150,6 +150,8 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.vcard.toggle': 'Virtual Business Card',
     'contact.vcard.download': 'Add to Contacts',
     'contact.vcard.instruction': 'Scan the QR code or click the button to add me to your contacts',
+    'contact.vcard.tap_to_flip': 'Tap to flip',
+    'contact.vcard.scan_title': 'Scan QR Code to Add Contact',
     
     // Footer
     'footer.rights': 'All rights reserved.',
@@ -324,6 +326,8 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.vcard.toggle': 'بطاقة عمل افتراضية',
     'contact.vcard.download': 'إضافة إلى جهات الاتصال',
     'contact.vcard.instruction': 'امسح رمز QR أو انقر على الزر لإضافتي إلى جهات الاتصال الخاصة بك',
+    'contact.vcard.tap_to_flip': 'انقر للتحويل',
+    'contact.vcard.scan_title': 'امسح رمز QR لإضافة جهة اتصال',
     
     // Footer
     'footer.rights': 'جميع الحقوق محفوظة.',
