@@ -324,8 +324,8 @@ const VirtualBusinessCard: React.FC<VirtualBusinessCardProps> = ({ setCursorVari
                     {/* Embossed decorative line */}
                     <div className="h-px w-full bg-gradient-to-r from-transparent via-primary/30 to-transparent mb-3"></div>
                     
-                    {/* Download button */}
-                    <div className="flex justify-center mb-2">
+                    {/* Download button - hide on mobile, only show the one outside the card */}
+                    <div className="flex justify-center mb-2 hidden md:flex">
                       <a
                         href="/vcard/elyas_ahmed.vcf"
                         download="Elyas_Ahmed.vcf"
@@ -349,6 +349,22 @@ const VirtualBusinessCard: React.FC<VirtualBusinessCardProps> = ({ setCursorVari
                 </div>
               </div>
             </motion.div>
+            
+            {/* Static download button outside the card - only for mobile */}
+            <div className="mt-5 block md:hidden">
+              <a
+                href="/vcard/elyas_ahmed.vcf"
+                download="Elyas_Ahmed.vcf"
+                className="inline-flex items-center px-4 py-2 space-x-2 rounded-lg bg-primary/10 text-primary hover:bg-primary/20 transition-colors"
+                onMouseEnter={() => setCursorVariant('button')}
+                onMouseLeave={() => setCursorVariant('default')}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+                <span>{t('contact.vcard.download')}</span>
+              </a>
+            </div>
           </div>
         )}
       </motion.div>
