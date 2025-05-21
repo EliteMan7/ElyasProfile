@@ -136,7 +136,7 @@ const Contact: React.FC<ContactProps> = ({ setCursorVariant }) => {
                 </div>
                 <div>
                   <h4 className="font-medium">{t('contact.social')}</h4>
-                  <div className="flex space-x-4 mt-2">
+                  <div className="flex gap-4 mt-2">
                     <a 
                       href="https://linkedin.com/in/-elyasahmed" 
                       target="_blank"

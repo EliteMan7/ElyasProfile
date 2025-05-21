@@ -39,7 +39,7 @@ const Footer: React.FC<FooterProps> = ({ setCursorVariant }) => {
               {t('footer.description')}
             </p>
             <h3 className="text-lg font-semibold mb-3">{t('footer.social')}</h3>
-            <div className="flex space-x-4 rtl:space-x-0 rtl:space-x-reverse rtl:gap-4">
+            <div className="flex gap-4">
               <motion.a 
                 href="https://linkedin.com/in/-elyasahmed" 
                 target="_blank"
